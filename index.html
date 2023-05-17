@@ -1,25 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Price Calculator Project</title>
     <!-- css -->
-    <link rel="stylesheet" href="/css/style.css">
-</head>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
 
-<body>
-    <h1>Omad Hammaga!</h1>
+  <body>
     <main>
+      <!-- Birinchi bet -->
+      <form data-form action="#" class="all-infos">
+        <div class="d-flex-box">
+          <label for="list-number-reg">Hisobotni ro'yxatga olish raqami</label>
+          <input
+            data-royxatga-olish-raqami
+            type="number"
+            name="ro'yxatga olish raqami"
+            id="list-number-reg"
+          />
+        </div>
+        <div class="d-flex-box">
+          <label for="list-number-data">Hisobotni ro'yxatga olish sanasi</label>
+          <input
+            data-royxatga-olish-sanasi
+            type="number"
+            name="ro'yxatga olish sanasi"
+            id="list-number-data"
+          />
+        </div>
+        <div class="d-flex-box">
+          <label for="evaluation-number-data">Baholash sanasi</label>
+          <input
+            data-baholash-sanasi
+            type="number"
+            name="baholash sanasi"
+            id="evaluation-number-data"
+          />
+        </div>
+        <div class="d-flex-box">
+          <label for="evaluation-object">Baholash obyekt</label>
+          <input
+            data-baholash-obyekti
+            type="text"
+            name="avtotransport vositasi rusumi"
+            id="evaluation-object"
+            placeholder="avtotransport vositasi rusumi"
+          />
+          <input
+            data-trans-turi
+            type="text"
+            name="avtotransport vositasi turi"
+            id="evaluation-object"
+            placeholder="avtotransport vositasi turi"
+          />
+          <input
+            data-trans-raqami
+            type="number"
+            name="avtotransport vositasi davlat raqami"
+            id="evaluation-object"
+            placeholder="avtotransport vositasi davlat raqami"
+          />
+          <input
+            data-trans-ishlab-chiqarilgan-sanasi
+            type="number"
+            name="avtotransport vositasi ishlab chiqarilgan yil"
+            id="evaluation-object"
+            placeholder="avtotransport vositasi ishlab chiqarilgan yil"
+          />
+          <input
+            data-trans-manzil
+            type="text"
+            name="baholash obyekti joylashgan manzil"
+            id="evaluation-object"
+            placeholder="baholash obyekti joylashgan manzil"
+          />
+        </div>
+        <div class="d-flex-box">
+          <label for="evaluation-subject">Baholash obyektining egasi</label>
+          <input
+            data-baholash-obyekti-egasi
+            type="text"
+            name="baholash obyektining egasi"
+            id="evaluation-subject"
+          />
+        </div>
+        <div class="d-flex-box">
+          <label for="customer">Buyurtmachi</label>
+          <input
+            data-buyurtmachi
+            type="text"
+            name="buyurtmachi"
+            id="customer"
+          />
+        </div>
+        <div class="d-flex-box">
+          <label for="customer-adress-rek"
+            >Buyurtmachining manzili va rekvizitlari</label
+          >
+          <input
+            data-buyurtmachi-rekvizitlari
+            type="text"
+            name="buyurtmachining manzili va rekvizitlari"
+            id="customer-adress-rek"
+          />
+        </div>
+      </form>
 
+      <!-- Hisoblash baholash varog'i-->
+      <form action="#" method="post" data-form-eskirish-birinchi-usul>
+        <div class="boxes">
+          <label for="avto-trasport-asosiy-parametri-nomi">
+            Baholanayotgan avto transport vositasining asosiy parametri nomi
+          </label>
+          <input
+            type="text"
+            id="avto-trasport-asosiy-parametri-nomi"
+            name="avto-trasport-asosiy-parametri-nomi"
+            data-asosiy-parametr-nomi
+            required
+          />
+        </div>
+        <div class="boxes">
+          <label for="ekputatsiyaga-qadar-qiymat">
+            Asosiy parametirlarning aksplutatsiyaga qadar qiymati
+          </label>
+          <input
+            type="number"
+            name="ekputatsiyaga-qadar-qiymat"
+            id="ekputatsiyaga-qadar-qiymat"
+            data-eksplutatsiyaga-qadar-qiymat
+            required
+          />
+        </div>
+        <div class="boxes">
+          <label for="baholash-paytidagi-qiymati">
+            Asosiy parametirlarning baholash paytidagi qiymati
+          </label>
+          <input
+            type="number"
+            name="baholash-paytidagi-qiymati"
+            id="baholash-paytidagi-qiymati"
+            data-baholash-paytidagi-qiymati
+            required
+          />
+        </div>
+        <div class="boxes">
+          <label for="baholash-daraja-korsatkichi">
+            Asosiy parametirlarning baholash obyektiga tasir kuchini
+            tavsiflovchi daraja ko'rsatkichi (0.6 - 0.8)
+          </label>
+          <input
+            type="number"
+            name="baholash-daraja-korsatkichi"
+            id="baholash-daraja-korsatkichi"
+            data-baholash-daraja-korsatkichi
+            max="0.8"
+            min="0.6"
+            step="0.1"
+            required
+          />
+        </div>
+        <button class="general_buttons" data-birinchi-usul-tugmasi type="click">
+          Hisobla
+        </button>
+        <p data-jami-eskirish>
+          <span>Jismoniy eskirish, %</span>
+          <span data-jami-eskirish-text></span>
+        </p>
+      </form>
+      <form action="#" data-form-eskirish-ikkinchi-usul>
+        <div class="boxes">
+          <label for="samarali-yoshi">
+            Baholanayotgan avtotransport vositasining baholash sanasidagi
+            samarali yoshi (ishlagan vaqti)
+          </label>
+          <input
+            type="number"
+            id="samarali-yoshi"
+            name="samarali-yoshi"
+            data-samarali-yosh
+            required
+          />
+        </div>
+        <div class="boxes">
+          <label for="xizmat-muddati">
+            Hisobdan chiqarish yoki kapital ta'mirlashgacha normativ xizmati
+            muddati(ishlagan vaqti)
+          </label>
+          <input
+            type="number"
+            id="xizmat-muddati"
+            name="xizmat-muddati"
+            data-xizmat-muddat
+            required
+          />
+        </div>
+        <div class="boxes">
+          <label for="qoldiq-xizmat-muddati">
+            Qoldiq xizmati muddati(ishlagan vaqti)
+          </label>
+          <input
+            type="number"
+            id="qoldiq-xizmat-muddati"
+            name="qoldiq-xizmat-muddati"
+            data-qoldiq-xizmat-muddat
+            required
+          />
+        </div>
+        <p data-jismoniy-eskirish-ikkinchi-usul>
+          <span>Jismoniy eskirish, %</span>
+          <span data-jismoniy-eskirish-text></span>
+        </p>
+        <button class="general_buttons" data-eskirish-tugma type="click">
+          Hisobla
+        </button>
+      </form>
+      <form action="#" data-form-uchunchi-usul-eskirish>
+        <div class="boxes">
+          <label for="tamirlash-qiymati">
+            Baholanayotgan avtotransport vositasining eskirishini bartaraf etish
+            uchun talab qilinadigan tamirlash qiymati so'm</label
+          >
+          <input
+            type="number"
+            id="tamirlash-qiymati"
+            name="tamirlash-qiymati"
+            data-tamirlash-qiymat
+            required
+            placeholder="so'm"
+          />
+        </div>
+
+        <div class="boxes">
+          <label for="yangi-anolog-qiymati"> Yangi analog qiymati </label>
+          <input
+            type="number"
+            id="yangi-anolog-qiymati"
+            name="yangi-anolog-qiymati"
+            data-yangi-analog
+            required
+          />
+        </div>
+        <p data-jismoniy-eskirish-uchunchi-usul>
+          <span>Jismoniy eskirish, %</span>
+          <span data-jismoniy-eskirish-tugri-usuli-text></span>
+        </p>
+        <button
+          class="general_buttons"
+          data-eskirish-tugri-hisoblash-tugma
+          type="click"
+        >
+          Hisobla
+        </button>
+      </form>
     </main>
 
     <!-- script -->
     <script src="/script/script-1.js"></script>
     <script src="/script/script-2.js"></script>
     <script src="/script/script-3.js"></script>
-</body>
-
+  </body>
 </html>
